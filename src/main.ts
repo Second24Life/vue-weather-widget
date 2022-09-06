@@ -1,5 +1,8 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp, defineCustomElement } from "vue";
+import WeatherWidget from "./WeatherWidget.ce.vue";
 import store from "./store";
 
-createApp(App).use(store).mount("#app");
+// WeatherWidget.use(store);
+const App = defineCustomElement(WeatherWidget);
+
+customElements.define("weather-widget", App);

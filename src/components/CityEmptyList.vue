@@ -1,7 +1,7 @@
 <template>
   <div class="empty">
-    <p class="empty__descr">Oh... Cities list is empty.</p>
-    <button class="btn btn-empty" @click="addMyCity">Add my city</button>
+    <p class="empty__descr">City list is empty.</p>
+    <button class="btn btn-empty" @click="addMyCity">Add current city</button>
   </div>
 </template>
 

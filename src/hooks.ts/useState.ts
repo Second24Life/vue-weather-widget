@@ -17,6 +17,8 @@ export default () => {
 
   const cityList = computed<IWeatherMainShort[]>({
     get() {
+      console.log(store.state.cityList);
+
       return store.state.cityList;
     },
     set(value) {
@@ -39,7 +41,7 @@ export default () => {
   };
 
   const resetAll = () => {
-    store.commit("resetcityList");
+    store.commit("resetCityList");
     store.dispatch("loadMyCity");
   };
 

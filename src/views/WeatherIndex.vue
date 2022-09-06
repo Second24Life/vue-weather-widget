@@ -13,7 +13,7 @@
     </li>
   </ul>
 
-  <app-error-container />
+  <app-error-container v-if="error.status" />
 
   <city-empty-list v-if="!cityList.length && !loading && !error.status" />
 </template>

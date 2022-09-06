@@ -6,12 +6,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div>
+      <div class="container">
+        <h1 class="title">Weather widget</h1>
+        <div class="description">
+          <p>This weather widget is a test task for Front-end developer.</p>
+          <p>For use add in your web-page:
+            <code>
+              <br>
+              &lt;script defer="defer" src="https://second24life.github.io/vue-weather-widget/js/app.js"&gt;&lt;/script&gt;
+              <br>
+              &lt;weather-widget&gt;&lt;/weather-widget&gt;
+            </code>
+          </p>
+        </div>
+      </div>
+    </div>
+    <weather-widget />
     <!-- built files will be auto injected -->
   </body>
 </html>
+
+Test task for Front-end developer

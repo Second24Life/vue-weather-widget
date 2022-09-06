@@ -3,7 +3,8 @@ const webpack = require("webpack");
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  // publicPath: "/weather-vidget/",
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/vue-weather-widget/" : "/",
   filenameHashing: false,
   productionSourceMap: false,
   configureWebpack: {

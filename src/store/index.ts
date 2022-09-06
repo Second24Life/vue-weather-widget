@@ -68,29 +68,7 @@ const geo = navigator.geolocation;
 export default createStore<State>({
   state: {
     page: "Home",
-    cityList: [
-      {
-        id: 0,
-        name: "",
-        country: "",
-        iconPath: "",
-        skyDescr: "",
-        windDescr: "",
-        windDirection: "",
-        temp: 0,
-        feelsLike: 0,
-        speedWind: 0,
-        degWind: 0,
-        humidity: 0,
-        pressure: 0,
-        dewPoint: 0,
-        visibility: 0,
-        order: 0,
-        lat: 0,
-        lon: 0,
-        searchMethod: "Location",
-      },
-    ],
+    cityList: [] as IWeatherMainShort[],
     cityTotal: 0,
     success: false,
     loading: false,
@@ -225,7 +203,7 @@ export default createStore<State>({
         });
 
         const { data } = weatherResponse;
-        state.cityTotal + 1;
+        data.order = state.cityTotal + 1;
 
         const weather = createCityState(data, "Location");
 
@@ -239,7 +217,7 @@ export default createStore<State>({
       }
     },
 
-    async loadMyCity({ commit, state }) {
+    async loadMyCity({ commit, state, dispatch }) {
       const success: PositionCallback = async (pos) => {
         commit("setLoading");
         commit("removeError");
@@ -267,7 +245,11 @@ export default createStore<State>({
         }
       };
 
-      geo.getCurrentPosition(success);
+      const error: PositionErrorCallback = async () => {
+        dispatch("loadCity", "London");
+      };
+
+      geo.getCurrentPosition(success, error);
     },
 
     changeOrderCities({ commit }, list) {

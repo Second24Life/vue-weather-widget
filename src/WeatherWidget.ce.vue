@@ -8,8 +8,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ILocation } from "@/types";
-import WeatherIndex from "./WeatherIndex.vue";
-import WeatherSettings from "./WeatherSettings.vue";
+import WeatherIndex from "@/views/WeatherIndex.vue";
+import WeatherSettings from "@/views/WeatherSettings.vue";
 import useState from "@/hooks.ts/useState";
 
 export default defineComponent({
@@ -18,11 +18,11 @@ export default defineComponent({
   setup() {
     const { page, loadApp } = useState();
 
-    const storageSitiesList: ILocation[] | null = JSON.parse(
+    const storageCityList: ILocation[] | null = JSON.parse(
       localStorage.getItem("cityList") || "null"
     );
 
-    loadApp(storageSitiesList);
+    loadApp(storageCityList);
 
     return { page };
   },
