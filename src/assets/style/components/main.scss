@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+a,
+button {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: auto;
+  }
+}
+
+.weather-widget__wrapper {
+  position: relative;
+  max-width: 300px;
+  max-height: 650px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: auto;
+  color: $main-color;
+}

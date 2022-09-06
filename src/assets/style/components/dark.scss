@@ -1,0 +1,31 @@
+/* DARK MODE OS */
+@media (prefers-color-scheme: dark) {
+  #app {
+    .weather-widget__wrapper {
+      background-color: $body-color-dark;
+
+      *,
+      *::after,
+      *::before {
+        color: $main-color-dark;
+      }
+    }
+
+    .btn {
+      &-empty {
+        border: 2px solid $main-color-dark;
+
+        &:hover {
+          background-color: $main-color-dark;
+          color: $body-color-dark;
+        }
+      }
+    }
+
+    .search {
+      &__field {
+        border: 1px solid $main-color;
+      }
+    }
+  }
+}
